@@ -2,10 +2,10 @@
 var generateBtn = document.querySelector("#generate");
 
 // Characters to generate from
-var lowercaseChar = 'abcdefghijklmnopqrstuvwxyz';
-var uppercaseChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var numberChar = '0123456789';
-var specialChar = '!"#$%&()*+,-./:;<=>?@[]^_`{|}~';
+var lowercaseChar = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var uppercaseChar = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var numberChar = ['0','1','2','3','4','5','6','7','8','9'];
+var specialChar = ['!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[',']','^','_','`','{','|','}','~'];
 
 
 
@@ -48,11 +48,17 @@ function generatePassword() {
   if (chooseSpecialChar) {
     passwordCharSet = passwordCharSet.concat(specialChar);
   };
+
   console.log(passwordCharSet);
 
 
   var passwordCreated = ""
 
+  for (var i = 0; i < chooseLength; i++) {
+    passwordCreated = passwordCreated + passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)];
+  };
+
+  console.log(passwordCreated);
 
 
 }

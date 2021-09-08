@@ -10,14 +10,15 @@ var specialChar = '!"#$%&()*+,-./:;<=>?@[]^_`{|}~';
 
 
 function generatePassword() {
-  var chooseLength = window.prompt("Choose a password length between 8 and 128.")
-  console.log(chooseLength)
+  var chooseLength = window.prompt("Choose a password length between 8 and 128.");
+  console.log(chooseLength);
 
   while (chooseLength <= 7 || chooseLength >= 129) {
     alert("Password length must range between 8-128 characters. Please choose a valid number.");
     chooseLength = window.prompt("Choose a password length between 8 and 128.");
     console.log(chooseLength);
-  }
+  };
+
 
   var chooseLowercaseChar = confirm("Select OK to include lowercase characters.");
   var chooseUppercaseChar = confirm("Select OK to include uppercase characters.");
@@ -30,9 +31,27 @@ function generatePassword() {
     chooseUppercaseChar = confirm("Select OK to include uppercase characters.");
     chooseNumberChar = confirm("Select OK to include numerical characters.");
     chooseSpecialChar = confirm("Select OK to include special characters.");
-  }
+  };
 
-  
+
+  var passwordCharSet = [];
+
+  if (chooseLowercaseChar) {
+    passwordCharSet = passwordCharSet.concat(lowercaseChar);
+  };
+  if (chooseUppercaseChar) {
+    passwordCharSet = passwordCharSet.concat(uppercaseChar);
+  };
+  if (chooseNumberChar) {
+    passwordCharSet = passwordCharSet.concat(numberChar);
+  };
+  if (chooseSpecialChar) {
+    passwordCharSet = passwordCharSet.concat(specialChar);
+  };
+  console.log(passwordCharSet);
+
+
+  var passwordCreated = ""
 
 
 

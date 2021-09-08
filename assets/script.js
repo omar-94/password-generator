@@ -10,14 +10,13 @@ var specialChar = '!"#$%&()*+,-./:;<=>?@[]^_`{|}~';
 
 
 function generatePassword() {
-  var chooseLength = window.prompt("Choose a password length between 8 and 128.", "8-128")
+  var chooseLength = window.prompt("Choose a password length between 8 and 128.")
 
-  if (chooseLength <= 7 || chooseLength >= 129) {
+  while (chooseLength <= 7 || chooseLength >= 129) {
     alert("Password length must range between 8-128 characters. Please choose a valid number.");
-    var chooseLength = window.prompt("Choose a password length between 8 and 128.", "8-128")
-  } else {
-    passwordLength = chooseLength
-    console.log(chooseLength)
+    chooseLength = window.prompt("Choose a password length between 8 and 128.");
+    passwordLength = chooseLength;
+    console.log(passwordLength);
   }
 }
 
